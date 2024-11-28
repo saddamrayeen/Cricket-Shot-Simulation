@@ -14,6 +14,8 @@ public class BallMovement : MonoBehaviour
 
     public List<GameObject> allStamps;
     Rigidbody ballRigidBody;
+    public bool isTrackingBall = false;
+    bool canTrack = false;
 
     private void Awake()
     {
@@ -23,7 +25,11 @@ public class BallMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && !isTrackingBall)
+        {
+            StartMovement();
+        }
+        if (canTrack && isTrackingBall)
         {
             StartMovement();
         }
@@ -85,5 +91,6 @@ public class BallMovement : MonoBehaviour
         _rb.constraints = RigidbodyConstraints.FreezeAll;
         _rb.isKinematic = true;
         _rb.useGravity = false;
+
     }
 }

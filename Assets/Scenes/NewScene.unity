@@ -728,7 +728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208701942}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -16.505, y: 0.864, z: -0.229}
   m_LocalScale: {x: 0.07, y: 0.77546, z: 0.07}
   m_ConstrainProportionsScale: 0
@@ -738,7 +738,7 @@ Transform:
   - {fileID: 1329020765}
   - {fileID: 2043889551}
   - {fileID: 1880587184}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 543450652193691229}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &209838377
 GameObject:
@@ -1206,7 +1206,7 @@ LineRenderer:
       serializedVersion: 2
       key0: {r: 1, g: 0, b: 0, a: 1}
       key1: {r: 1, g: 0.7975035, b: 0, a: 0}
-      key2: {r: 0, g: 0, b: 0, a: 0.6745098}
+      key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1222,14 +1222,14 @@ LineRenderer:
       ctime7: 0
       atime0: 40940
       atime1: 65535
-      atime2: 65535
+      atime2: 0
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -1258,6 +1258,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 589043995}
   ballRigidbody: {fileID: 3469287838292062940}
   updateInterval: 0.1
+  points: []
 --- !u!1 &984947238
 GameObject:
   m_ObjectHideFlags: 3
@@ -1996,7 +1997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419184692}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.378, y: 0.7955, z: -0.229}
   m_LocalScale: {x: 0.07, y: 0.77546, z: 0.07}
   m_ConstrainProportionsScale: 0
@@ -2006,7 +2007,7 @@ Transform:
   - {fileID: 434054427}
   - {fileID: 64510493}
   - {fileID: 1905289867}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 543450652193691229}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1432071471
 GameObject:
@@ -2055,7 +2056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 5, z: 7}
+  m_FollowOffset: {x: 0, y: 5, z: 10}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2653,6 +2654,8 @@ Transform:
   - {fileID: 5913506658479123719}
   - {fileID: 798975458742167081}
   - {fileID: 4639674819271549058}
+  - {fileID: 1419184693}
+  - {fileID: 208701943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652361375100
@@ -2734,8 +2737,8 @@ GameObject:
   - component: {fileID: 1711813854296262163}
   - component: {fileID: 3469287838292062939}
   - component: {fileID: 3469287838292062940}
-  - component: {fileID: 3469287838292062938}
   - component: {fileID: 3469287838292062941}
+  - component: {fileID: 3469287838292062938}
   - component: {fileID: 3469287838292062942}
   m_Layer: 0
   m_Name: Ball
@@ -3397,7 +3400,7 @@ MonoBehaviour:
   bowlerEnd: {fileID: 229837310}
   batterEnd: {fileID: 55198352}
   speed: 15
-  ballHit: {fileID: 8300000, guid: f3e06fe49c60c3a4997cf09c6dbbabf3, type: 3}
+  ballJump: {fileID: 0}
   stumpHit: {fileID: 8300000, guid: 9d0c0fb4667dac446bc1eba2fae9a6f7, type: 3}
   allStamps:
   - {fileID: 209838377}
@@ -3405,6 +3408,7 @@ MonoBehaviour:
   - {fileID: 1329020764}
   - {fileID: 2043889550}
   - {fileID: 1880587183}
+  isTrackingBall: 0
 --- !u!135 &3469287838292062939
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3495,7 +3499,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.15
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -3505,21 +3509,21 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.12039585
-        inSlope: 0
-        outSlope: 0
+        value: 0.17584628
+        inSlope: -0.5266797
+        outSlope: -0.5266797
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.097369626
       - serializedVersion: 3
         time: 0.97700626
         value: 0
-        inSlope: -0.23161073
-        outSlope: -0.23161073
+        inSlope: 0.0074161105
+        outSlope: 0.0074161105
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.118135646
+        inWeight: 0.13659437
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -3528,7 +3532,7 @@ TrailRenderer:
       serializedVersion: 2
       key0: {r: 0.27843136, g: 0.35440326, b: 0.8784314, a: 1}
       key1: {r: 1, g: 0.8942379, b: 0, a: 0.45490196}
-      key2: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -3536,7 +3540,7 @@ TrailRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 77
       ctime1: 39552
-      ctime2: 65535
+      ctime2: 0
       ctime3: 0
       ctime4: 0
       ctime5: 0
@@ -3544,14 +3548,14 @@ TrailRenderer:
       ctime7: 0
       atime0: 38473
       atime1: 63608
-      atime2: 65535
+      atime2: 0
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -5307,8 +5311,6 @@ SceneRoots:
   - {fileID: 229837310}
   - {fileID: 55198352}
   - {fileID: 543450652361375100}
-  - {fileID: 1419184693}
-  - {fileID: 208701943}
   - {fileID: 589043994}
   - {fileID: 116110753}
   - {fileID: 1833198444}
